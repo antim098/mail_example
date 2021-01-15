@@ -14,6 +14,7 @@ public class HtmlBuilder {
     public static void main(String[] args) throws IOException {
         File htmlTemplateFile = new File("/home/cassandra/mailTemplate.html");
         String htmlString = FileUtils.readFileToString(htmlTemplateFile);
+        System.out.println("Read mail template file");
         String body = "Hi\n" +
                 "\n" +
                 "Below is the summary of ingestion of TOT file test.txt";
@@ -23,10 +24,12 @@ public class HtmlBuilder {
         htmlString = htmlString.replace("$fileName", "test");
         //File newHtmlFile = new File("C:\\Users\\AntimKant.Verma\\Documents\\BACKUP_DATA_DESKTOP\\Intellij Workspace\\Example\\src\\main\\resources\\new.html");
         //FileUtils.writeStringToFile(newHtmlFile, htmlString);
+        System.out.println("HTML string is :" + htmlString);
         String topic = "mailtest";
         loadProperties();
         producer = new KafkaProducer<String, String>(properties);
-        producer.send(new ProducerRecord<>(topic,"test",htmlString));
+        System.out.println("created producer");
+        producer.send(new ProducerRecord<>(topic, "test", htmlString));
     }
 
     public static void loadProperties() {

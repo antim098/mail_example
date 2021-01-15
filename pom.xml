@@ -28,7 +28,7 @@
     </dependencies>
 
     <build>
-        <finalName>kafka_trigger</finalName>
+        <finalName>mail</finalName>
         <plugins>
 
             <!-- download source code in Eclipse, best practice -->
@@ -64,11 +64,11 @@
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
                     <!-- MainClass in mainfest make a executable jar -->
-                    <!--                    <archive>-->
-                    <!--                        <manifest>-->
-                    <!--                            <mainClass>RunCassandra</mainClass>-->
-                    <!--                        </manifest>-->
-                    <!--                    </archive>-->
+                                        <archive>
+                                            <manifest>
+                                                <mainClass>HtmlBuilder</mainClass>
+                                            </manifest>
+                                        </archive>
 
                 </configuration>
                 <executions>
